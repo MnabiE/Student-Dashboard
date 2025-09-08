@@ -1,0 +1,26 @@
+input {
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 50px;
+    border: none;
+    color: black;
+    background-color: lightgray;
+}
+
+::placeholder {
+    color: tomato;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+button:hover {
+    background: linear-gradient(133deg, blue, yellow);
+}

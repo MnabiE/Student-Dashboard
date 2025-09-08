@@ -5,34 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard 🎓</title>
-    <style>
-        input {
-            padding: 10px 20px;
-            width: 300px;
-            border-radius: 50px;
-            border: none;
-            color: black;
-            background-color: lightgray;
-        }
-
-        ::placeholder {
-            color: tomato;
-            font-size: large;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        button {
-            padding: 10px 15px;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 20px;
-        }
-
-        button:hover {
-            background: linear-gradient(133deg, blue, yellow);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body
@@ -58,35 +31,7 @@
         <p id="final"></p>
         <p id="grade"></p>
     </div>
-    <script>
-
-        function show() {
-            let myName = document.getElementById("name").value;
-            let myschool = document.getElementById("schoolName").value;
-            let mScr = Number(document.getElementById("math").value);
-            let sScr = Number(document.getElementById("science").value);
-            let eScr = Number(document.getElementById("english").value);
-
-            document.getElementById("name_person").innerHTML = "Welcome, " + myName + " 🎉"
-            document.getElementById("school").innerText = myschool;
-            document.getElementById("score").innerHTML = "Scores: " + mScr + ", " + sScr + ", " + eScr;
-
-            let total = Number( mScr + sScr + eScr);
-            let avg = total / 3
-
-            if (avg >= 95) {
-                document.getElementById("grade").innerHTML = "Grade: A+";
-            } else if (avg >= 90) {
-                document.getElementById("grade").innerHTML = "Grade: A";
-            } else if (avg >= 80) {
-                document.getElementById("grade").innerHTML = "Grade: B";
-            } else{
-                document.getElementById("grade").innerHTML = "Grade: C";
-            };
-
-            document.getElementById("final").innerHTML = "Total: " + total + "<br>" + "Average: " + avg + "<br>"
-        }
-
+    <script src="script.js">
     </script>
 </body>
 
