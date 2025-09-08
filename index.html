@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Student Dashboard</title>
+</head>
+
+<body>
+  <h1>🎓 Student Dashboard</h1>
+
+  <!-- Input fields -->
+  <input id="nameInput" type="text" placeholder="Enter your name"><br><br>
+  <input id="score1" type="number" placeholder="Score for Math"><br><br>
+  <input id="score2" type="number" placeholder="Score for Science"><br><br>
+  <input id="score3" type="number" placeholder="Score for English"><br><br>
+
+  <button onclick="generateReport()">Generate Report</button>
+
+  <h2 id="greeting"></h2>
+  <p id="studentInfo"></p>
+  <p id="results"></p>
+
+  <script>
+    // Student Dashboard Project
+    // Demonstrates variables, objects, functions, strings, events, operators, and more.
+
+    // Function to calculate grade
+    function getGrade(avg) {
+      if (avg >= 90) return "A+";
+      else if (avg >= 75) return "A";
+      else if (avg >= 60) return "B";
+      else if (avg >= 45) return "C";
+      else return "F";
+    }
+
+    // Main function triggered by button click
+    function generateReport() {
+      // Collect input values (Strings, Numbers)
+      let name = document.getElementById("nameInput").value.trim();
+      let s1 = Number(document.getElementById("score1").value);
+      let s2 = Number(document.getElementById("score2").value);
+      let s3 = Number(document.getElementById("score3").value);
+
+      // String Methods: change to proper case
+      let formattedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
+      // Object: store student info
+      let student = {
+        name: formattedName,
+        scores: [s1, s2, s3],
+        school: "Sultan High School"
+      };
+
+      // Arithmetic, Operators, Assignment
+      let total = s1 + s2 + s3;
+      let avg = total / 3;
+      let grade = getGrade(avg); // Function usage
+
+      // Output: greeting and report
+      document.getElementById("greeting").innerHTML = "Welcome, " + student.name + " 🎉";
+      document.getElementById("studentInfo").innerHTML =
+        "School: " + student.school + "<br>" +
+        "Scores: " + student.scores.join(", ");
+
+      document.getElementById("results").innerHTML =
+        "Total: " + total + "<br>" +
+        "Average: " + avg.toFixed(2) + "<br>" +
+        "Grade: " + grade;
+    }
+  </script>
+</body>
+
+</html>

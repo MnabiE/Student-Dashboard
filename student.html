@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            padding: 10px 20px;
+            width: 300px;
+            border-radius: 50px;
+            border: none;
+            color: black;
+            background-color: lightgray;
+        }
+
+        ::placeholder {
+            color: tomato;
+            font-size: large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            background: linear-gradient(133deg, blue, yellow);
+        }
+    </style>
+</head>
+
+<body
+    style="display: flex; background: linear-gradient(133deg, blue, rgb(43, 173, 216), red); height: 200vh; flex-direction: column; align-items: center; ">
+    <div style="display: flex; flex-direction: column; width: 60%; margin-bottom: 30px;">
+        <h1 style="text-align: center;">🎓 Welcome to Student Dashboard</h1>
+        <div style="display: flex; align-items: center; justify-content: center;  flex-direction: column; width: auto;">
+            <input id="name" placeholder="Enter your name" type="text"><br>
+            <input id="schoolName" placeholder="Enter your School" type="text"><br>
+            <input id="math" placeholder="Score for Math" type="number"><br>
+            <input id="science" placeholder="Score for Science" type="number"><br>
+            <input id="english" placeholder="Score for English" type="number"><br>
+            <button onclick="show()">Generate Report</button>
+        </div>
+    </div>
+
+
+    <div style="font-size: large; color: white;">
+        <h2 id="name_person"></h2>
+        <span id="school"></span>
+        <span id="score"></span>
+
+        <p id="final"></p>
+    </div>
+    <script>
+
+        function show() {
+            let myName = document.getElementById("name").value;
+            let myschool = document.getElementById("schoolName").value;
+            let mScr = document.getElementById("math").value;
+            let sScr = document.getElementById("science").value;
+            let eScr = document.getElementById("english").value;
+
+            document.getElementById("name_person").innerHTML = "Welcome, " + myName + " 🎉"
+            document.getElementById("school").innerText = myschool;
+            document.getElementById("score").innerHTML = "Scores: " + mScr + ", " + sScr + ", " + eScr;
+
+            let total = mScr + sScr + eScr;
+            let avg = total / 3
+
+            if (avg >= 95) {
+                console.log("+A");
+            } else if (avg >= 90) {
+                console.log("A");
+            } else if (avg >= 80) {
+                console.log("B");
+            } else (avg >= 70){
+                console.log("C");
+            }
+            document.getElementById("final").innerHTML = "Total:" + total + "<br>" + "Average: " + avg + "<br>" + "Grade: " + 
+        }
+
+    </script>
+</body>
+
+</html>
